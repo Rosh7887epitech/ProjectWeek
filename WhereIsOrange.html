@@ -41,6 +41,12 @@
             { name: "EdTech Campus", lat: 47.281218, lng: -1.547476, description: "Incubateur de startups. Ouvert 7j/7" },
             { name: "Novapuls", lat: 47.214221, lng: -1.557460, description: "Incubateur de startups. Ouvert 7j/7" },
             { name: "La Cantine Numérique", lat: 47.206103, lng: -1.559992, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "La French Tech Nantes", lat: 47.206299, lng: -1.560421, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "La Halle 6", lat: 47.206061, lng: -1.561094, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "Le Solilab", lat: 47.201571, lng: -1.570677, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "Web2Day", lat: 47.206227, lng: -1.560325, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "Nantes Digital Week", lat: 47.213161, lng: -1.543620, description: "Incubateur de startups. Ouvert 7j/7" },
+            { name: "Salon de la Data et de l'IA", lat: 47.213336, lng: -1.544168, description: "Incubateur de startups. Ouvert 7j/7" }
         ];
 
         points.forEach(point => {
@@ -56,7 +62,7 @@
             a.textContent = point.name;
             a.href = "#";
             a.onclick = (e) => {
-                e.preventDefault(); // Empêche le comportement par défaut
+                e.preventDefault();
                 map.setView([point.lat, point.lng], 15);
             };
             menuContent.appendChild(a);
