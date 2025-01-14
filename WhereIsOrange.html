@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive avec Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="WhereIsOrange.css" />
+</head>
+<body>
+    <div id="map"></div>
+    <div id="sidebar">
+        <h2>Nous rencontrer</h2>
+        <p>Ici vous pouvez prendre rendez-vous pour rencontrer un professionnel dans l'un de nos nombreux points de rencontre</p>
+        <ul>
+            <li>Epitech Nantes</li>
+            <li>La Halle 6</li>
+            <li>DevFest</li>
+            <li>...</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([47.209472, -1.575500], 13);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const customIcon = L.icon({
+            iconUrl: 'ping_salon.png',
+            iconSize: [40, 40],
+            iconAnchor: [15, 40],
+            popupAnchor: [0, -40]
+        });
+
+        const points = [
+            { name: "Epitech Nantes", lat: 47.209472, lng: -1.575500, description: "Ecole de futurs ingénieurs informatiques. Ouvert 7j/7" },
+            { name: "Le Village CA", lat: 47.254821, lng: -1.511267, description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "IMT Atlantique", lat: 47.28217054004726, lng: -1.5206084861740314, description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Atlanpole", lat: 47.287600443514265, lng: -1.526002260591016, description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "EdTech Campus", lat: 47.281218100709026, lng: -1.5474759391039714, description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Novapuls", lat: 47.214221127569516, lng: -1.5574598299113416, description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "La cantine numérique", lat: 47.20610262728983, lng: -1.5599921936838543 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "La French Tech Nantes", lat: 47.206299423869226, lng: -1.56042134710165 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "La Hall 6", lat: 47.20606082459054, lng: -1.5610941016331927 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Le Solilab", lat: 47.201571048742096, lng: -1.5706769685448971 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Web2day", lat: 47.206226536332366, lng: -1.56032478758264 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Nantes digital wee", lat: 47.21316057878543, lng: -1.5436200029240927 , description: "Incubateur de StartUp Ouvert 7j/7" },
+            { name: "Salon de la data et de l'IA", lat: 47.21333607047196, lng: -1.5441680865063345 , description: "Incubateur de StartUp Ouvert 7j/7" },
+        ];
+
+        points.forEach(point => {
+            const marker = L.marker([point.lat, point.lng], { icon: customIcon }).addTo(map);
+            marker.bindPopup(`<b>${point.name}</b><br>${point.description}`);
+        });
+    </script>
+</body>
+</html>
