@@ -21,3 +21,44 @@ body {
 #sidebar h2 {
     margin-top: 0;
 }
+
+#menu {
+    position: relative;
+    margin-top: 20px;
+}
+#menu > button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+}
+#menu > button:hover {
+    background-color: #005EA6;
+}
+#menu-content {
+    display: none;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#menu-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+}
+#menu-content a:last-child {
+    border-bottom: none;
+}
+#menu-content a:hover {
+    background-color: #ffffff;
+}
