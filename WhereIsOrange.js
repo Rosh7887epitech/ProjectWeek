@@ -19,19 +19,19 @@ const userIcon = L.icon({
 });
 
 const points = [
-    { name: "Epitech Nantes", lat: 47.209472, lng: -1.575500, description: "École de futurs ingénieurs informatiques. Ouvert 7j/7" },
-    { name: "Le Village CA", lat: 47.254821, lng: -1.511267, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "IMT Atlantique", lat: 47.282171, lng: -1.520608, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Atlanpole", lat: 47.287600, lng: -1.526002, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "EdTech Campus", lat: 47.281218, lng: -1.547476, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Novapuls", lat: 47.214221, lng: -1.557460, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "La Cantine Numérique", lat: 47.206103, lng: -1.559992, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "La French Tech Nantes", lat: 47.206299, lng: -1.560421, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "La Halle 6", lat: 47.206061, lng: -1.561094, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Le Solilab", lat: 47.201571, lng: -1.570677, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Web2Day", lat: 47.206227, lng: -1.560325, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Nantes Digital Week", lat: 47.213161, lng: -1.543620, description: "Incubateur de startups. Ouvert 7j/7" },
-    { name: "Salon de la Data et de l'IA", lat: 47.213336, lng: -1.544168, description: "Incubateur de startups. Ouvert 7j/7" }
+    { name: "Epitech Nantes (situé à 700 m)", lat: 47.209472, lng: -1.575500, description: "École de futurs ingénieurs informatiques. Ouvert 7j/7" },
+    { name: "Le Village CA (situé à 7,3 km)", lat: 47.254821, lng: -1.511267, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "IMT Atlantique (situé à 18,3 km)", lat: 47.282171, lng: -1.520608, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Atlanpole (situé à 13,6 km)", lat: 47.287600, lng: -1.526002, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "EdTech Campus (situé à 10,3 km)", lat: 47.281218, lng: -1.547476, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Novapuls (situé à 450 m)", lat: 47.214221, lng: -1.557460, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "La Cantine Numérique (situé à 1,3 km)", lat: 47.206103, lng: -1.559992, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "La French Tech Nantes (situé à 1,3 km)", lat: 47.206299, lng: -1.560421, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "La Halle 6 (situé à 1,4 km)", lat: 47.206061, lng: -1.561094, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Le Solilab (situé à 2,9 km)", lat: 47.201571, lng: -1.570677, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Web2Day (situé à 1,4 km)", lat: 47.206227, lng: -1.560325, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Nantes Digital Week (situé à 1,9 km)", lat: 47.213161, lng: -1.543620, description: "Incubateur de startups. Ouvert 7j/7" },
+    { name: "Salon de la Data et de l'IA (situé à 1,9 km)", lat: 47.213336, lng: -1.544168, description: "Incubateur de startups. Ouvert 7j/7" }
 ];
 
 points.forEach(point => {

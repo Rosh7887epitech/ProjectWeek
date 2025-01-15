@@ -46,12 +46,13 @@ body {
     position: relative;
     margin-top: 20px;
 }
+
 #menu > button {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #FF7800;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -59,9 +60,10 @@ body {
     text-align: left;
     transition: background-color 0.3s, color 0.3s;
 }
+
 #menu > button:hover {
-    color: #333;
-    background-color: #f0f0f0;
+    color: #ffffff;
+    background-color: #FF7800;
 }
 
 #menu-content {
@@ -97,7 +99,7 @@ body {
     gap: 10px;
 }
 
-.date, .timeslot {
+.date {
     padding: 14px;
     background-color: #FF7800;
     color: white;
@@ -110,9 +112,27 @@ body {
     margin-top: 25px;
 }
 
-.date:hover, .timeslot:hover {
+.timeslot {
+    padding: 14px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    margin: 5px 5px;
+    margin-top: 25px;
+}
+
+.date:hover {
     background-color: #f0f0f0;
     color: #333;
+}
+
+.timeslot:hover {
+    background-color: #444;
+    color: #ffffff;
 }
 
 .timeslot {
