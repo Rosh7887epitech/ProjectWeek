@@ -1,4 +1,4 @@
-const map = L.map('map').setView([47.209841, -1.560657], 15);
+const map = L.map('map').setView([47.209884, -1.560712], 15);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -6,6 +6,13 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 
 const customIcon = L.icon({
     iconUrl: 'ping_salon.png',
+    iconSize: [40, 40],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, -40]
+});
+
+const userIcon = L.icon({
+    iconUrl: 'ping_user1.png',
     iconSize: [40, 40],
     iconAnchor: [15, 40],
     popupAnchor: [0, -40]
@@ -29,6 +36,15 @@ const points = [
 
 points.forEach(point => {
     const marker = L.marker([point.lat, point.lng], { icon: customIcon }).addTo(map);
+    marker.bindPopup(`<b>${point.name}</b><br>${point.description}`);
+});
+
+const points_user = [
+    { name: "Vous êtes ici !", lat: 47.209884, lng: -1.560712}
+];
+
+points_user.forEach(point => {
+    const marker = L.marker([point.lat, point.lng], { icon: userIcon }).addTo(map);
     marker.bindPopup(`<b>${point.name}</b><br>${point.description}`);
 });
 
@@ -57,7 +73,7 @@ const timeslotsContainer = document.getElementById('timeslots');
 
 function generateDates() {
     const today = new Date();
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i);
         const dateDiv = document.createElement('div');
