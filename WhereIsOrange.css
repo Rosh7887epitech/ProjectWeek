@@ -30,7 +30,7 @@ body {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #0078D7;
+    background-color: #FF7800;
     color: white;
     border: none;
     border-radius: 5px;
@@ -39,7 +39,8 @@ body {
     text-align: left;
 }
 #menu > button:hover {
-    background-color: #005EA6;
+    color: #333;
+    background-color: #f0f0f0;
 }
 #menu-content {
     display: none;
