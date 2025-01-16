@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Font3';  /* Nom donné à la troisième police */
+    font-family: 'Font3';
     src: url('fonts/F3.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -139,6 +139,69 @@ body {
 .timeslot {
     border: 1px solid #333;
 }
+
+.timeslot.selected {
+    border: 2px solid #FF7800;
+    background-color: #444;
+    color: #fff;
+}
+
+#appointment-form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-top: 20px;
+}
+
+#appointment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#appointment-form input[type="text"],
+#appointment-form input[type="email"],
+#appointment-form input[type="tel"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#appointment-form input[type="text"]:focus,
+#appointment-form input[type="email"]:focus,
+#appointment-form input[type="tel"]:focus {
+    border-color: #FF7800;
+    background-color: #555;
+}
+
+#appointment-form input[type="submit"] {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #FF7800;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#appointment-form input[type="submit"]:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#appointment-form input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
 
 @media (max-width: 768px) {
     #sidebar {

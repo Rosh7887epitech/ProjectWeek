@@ -19,6 +19,13 @@ const customIcon = L.icon({
     popupAnchor: [0, -40]
 });
 
+const tempIcon = L.icon({
+    iconUrl: 'ping_salon2.png',
+    iconSize: [40, 40],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, -40]
+});
+
 const userIcon = L.icon({
     iconUrl: 'ping_user1.png',
     iconSize: [40, 40],
@@ -27,15 +34,18 @@ const userIcon = L.icon({
 });
 
 const points = [
-    { name: "Le Village CA (situé à 7,3 km)", lat: 47.254821, lng: -1.511267, description: "Incubateur de startups. Ouvert 7j/7", showDates: true },
     { name: "Novapuls (situé à 450 m)", lat: 47.214221, lng: -1.557460, description: "Incubateur de startups. Ouvert 7j/7", showDates: true },
+    { name: "Orange Business (Rennes)", lat: 48.133635, lng: -1.623277, description: "Boutique Orange Business", showDates: true },
+    { name: "Orange Business (Paris)", lat: 48.729939, lng: 2.268626, description: "Boutique Orange Business", showDates: true },
+    { name: "Orange Business (Lyon)", lat: 45.755196, lng: 4.834973, description: "Boutique Orange Business", showDates: true },
+    { name: "Orange Business (Toulouse)", lat: 43.635353, lng: 1.375361, description: "Boutique Orange Business", showDates: true },
+    { name: "Orange Business (Bordeaux)", lat: 44.97888, lng: -0.571933, description: "Boutique Orange Business", showDates: true },
+];
+
+const points_temp = [
+    { name: "Le Village CA (situé à 7,3 km)", lat: 47.254821, lng: -1.511267, description: "Incubateur de startups. Ouvert 7j/7", showDates: false },
     { name: "La Cantine Numérique (situé à 1,3 km)", lat: 47.206103, lng: -1.559992, description: "Incubateur de startups. Ouvert 7j/7", showDates: false },
     { name: "La French Tech Nantes (situé à 1,3 km)", lat: 47.206299, lng: -1.560421, description: "Incubateur de startups. Ouvert 7j/7", showDates: false },
-    { name: "Orange Business (Rennes)", lat: 48.133635, lng: -1.623277, description: "Boutique Orange Business", showDates: false },
-    { name: "Orange Business (Paris)", lat: 48.729939, lng: 2.268626, description: "Boutique Orange Business", showDates: false },
-    { name: "Orange Business (Lyon)", lat: 45.755196, lng: 4.834973, description: "Boutique Orange Business", showDates: false },
-    { name: "Orange Business (Toulouse)", lat: 43.635353, lng: 1.375361, description: "Boutique Orange Business", showDates: false },
-    { name: "Orange Business (Bordeaux)", lat: 44.97888, lng: -0.571933, description: "Boutique Orange Business", showDates: false },
 ];
 
 const datesContainer = document.getElementById('dates');
@@ -77,12 +87,19 @@ function loadTimeSlots(selectedDate) {
     }
 }
 
+
 function validateTimeSlot(slotDiv) {
     const date = slotDiv.dataset.date;
     const time = slotDiv.dataset.time;
-    alert(`Rendez-vous validé pour le ${date} à ${time}.`);
-    slotDiv.remove();
+
+    const selectedTimeslotInput = document.getElementById("selected-timeslot");
+    selectedTimeslotInput.value = `${date} à ${time}`;
+
+    const timeslots = document.querySelectorAll(".timeslot");
+    timeslots.forEach(slot => slot.classList.remove("selected"));
+    slotDiv.classList.add("selected");
 }
+
 
 points.forEach(point => {
     const marker = L.marker([point.lat, point.lng], { icon: customIcon }).addTo(map);
@@ -90,6 +107,41 @@ points.forEach(point => {
     marker.on('click', () => {
         const messageContainer = document.getElementById('specialist-message');
         messageContainer.textContent = `Un expert est disponible à ${point.name}.`;
+        if (point.showDates) {
+            if (lastClickedMarker === marker) {
+                datesContainer.innerHTML = '';
+                timeslotsContainer.innerHTML = '';
+                lastClickedMarker = null;
+            } else {
+                generateDates();
+                lastClickedMarker = marker;
+            }
+        } else {
+            datesContainer.innerHTML = '';
+            timeslotsContainer.innerHTML = '';
+            lastClickedMarker = null;
+        }
+    });
+
+    const menuItem = document.createElement('a');
+    menuItem.textContent = point.name;
+    menuItem.href = "#";
+    menuItem.classList.add('menu-item');
+    menuItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        map.setView([point.lat, point.lng], 15);
+        marker.openPopup();
+    });
+
+    menuContent.appendChild(menuItem);
+});
+
+points_temp.forEach(point => {
+    const marker = L.marker([point.lat, point.lng], { icon: tempIcon }).addTo(map);
+    marker.bindPopup(`<b>${point.name}</b><br>${point.description}`);
+    marker.on('click', () => {
+        const messageContainer = document.getElementById('specialist-message');
+        messageContainer.innerHTML = `Un expert est disponible à ${point.name}.<br>&#10071 Evénement à durée limitée &#10071`;
         if (point.showDates) {
             if (lastClickedMarker === marker) {
                 datesContainer.innerHTML = '';

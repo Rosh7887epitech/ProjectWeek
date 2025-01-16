@@ -20,6 +20,21 @@
         <div id="dates"></div>
         <div id="timeslots"></div>
         <div id="specialist-message" style="margin-top: 20px; font-size: 16px; color: #ffffff;"></div>
+        <div id="appointment-form">
+            <form id="appointment">
+                <input type="text" id="name" name="name" placeholder="Nom" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Téléphone" required>
+                <input type="hidden" id="selected-timeslot" name="timeslot" value="">
+                <input type="submit" value="Prendre rendez-vous">
+            </form>
+        </div>
+        <div id="legend">
+            <br><p style="color: #FF7800; font-size: medium;">
+                <img src="ping_salon.png" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">Evenement permanent</p>
+            <p style="color: #AE84C9; font-size: medium;">
+                <img src="ping_salon2.png" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">Evenement en cours</p>
+        </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="WhereIsOrange.js"></script>
