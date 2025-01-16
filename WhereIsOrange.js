@@ -89,7 +89,7 @@ points.forEach(point => {
     marker.bindPopup(`<b>${point.name}</b><br>${point.description}`);
     marker.on('click', () => {
         const messageContainer = document.getElementById('specialist-message');
-        messageContainer.textContent = `Ici se trouve un spécialiste pour le point : ${point.name}.`;
+        messageContainer.textContent = `Un expert est disponible à ${point.name}.`;
         if (point.showDates) {
             if (lastClickedMarker === marker) {
                 datesContainer.innerHTML = '';
