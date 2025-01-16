@@ -31,6 +31,11 @@ const points = [
     { name: "Novapuls (situé à 450 m)", lat: 47.214221, lng: -1.557460, description: "Incubateur de startups. Ouvert 7j/7", showDates: true },
     { name: "La Cantine Numérique (situé à 1,3 km)", lat: 47.206103, lng: -1.559992, description: "Incubateur de startups. Ouvert 7j/7", showDates: false },
     { name: "La French Tech Nantes (situé à 1,3 km)", lat: 47.206299, lng: -1.560421, description: "Incubateur de startups. Ouvert 7j/7", showDates: false },
+    { name: "Orange Business (Rennes)", lat: 48.133635, lng: -1.623277, description: "Boutique Orange Business", showDates: false },
+    { name: "Orange Business (Paris)", lat: 48.729939, lng: 2.268626, description: "Boutique Orange Business", showDates: false },
+    { name: "Orange Business (Lyon)", lat: 45.755196, lng: 4.834973, description: "Boutique Orange Business", showDates: false },
+    { name: "Orange Business (Toulouse)", lat: 43.635353, lng: 1.375361, description: "Boutique Orange Business", showDates: false },
+    { name: "Orange Business (Bordeaux)", lat: 44.97888, lng: -0.571933, description: "Boutique Orange Business", showDates: false },
 ];
 
 const datesContainer = document.getElementById('dates');
